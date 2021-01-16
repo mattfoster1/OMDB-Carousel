@@ -11,12 +11,9 @@ class App extends Component {
   }
 
   async componentDidMount() {
+    this.setState({ seriesData: await getSeriesData() })
 
-    let seriesData = await getSeriesData();
-
-    this.setState({ seriesData: seriesData })
-
-    console.log("2" , this.state.seriesData);
+    console.log(this.state.seriesData);
   }
   render () {
     return (
