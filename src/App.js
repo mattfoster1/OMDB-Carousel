@@ -15,6 +15,7 @@ class App extends Component {
 
     console.log(this.state.seriesData);
   }
+  
   render () {
     return (
       <div className="App">
