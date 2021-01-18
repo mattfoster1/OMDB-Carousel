@@ -16,8 +16,10 @@ class Carousel extends Component {
       prevArrow: <CarouselArrow arrowType={'previous'}/>,
       nextArrow: <CarouselArrow arrowType={'next'}/>,
     };
+    
     const { EpisodesData } = this.props;
-    console.log(EpisodesData);
+    const imagePath = `${process.env.PUBLIC_URL}/`;
+
     return (
       <div>
         <StyledSlider {...settings}>
@@ -25,6 +27,7 @@ class Carousel extends Component {
             return (
               <EpisodeCard 
                 key={Episode.Episode} 
+                Image={imagePath + `images/ep` + Episode.Episode + `.jpg`}
                 Title={Episode.Title} 
                 Para={"***hardcoded placeholder text***"}
               />) 
