@@ -1,5 +1,7 @@
 import { Component } from 'react';
 
+import GlobalFonts from './resources/styles/fonts';
+
 import { SeasonInfo } from './components/SeasonInfo';
 import { Carousel } from './components/Carousel';
 import { getSeasonData, getShowData } from './api/data';
@@ -44,6 +46,7 @@ class App extends Component {
 
       return (
         <div className="App">
+          <GlobalFonts />
           <Container>
             <Main>
               <SeasonInfo 
