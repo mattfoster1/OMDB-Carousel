@@ -1,11 +1,12 @@
 import { Component } from 'react';
 
 import GlobalFonts from './resources/styles/fonts';
+import { Container, Main, BgrMask, Aside } from './resources/styles/styles';
 
-import { SeasonInfo } from './components/SeasonInfo';
 import { Carousel } from './components/Carousel';
+import { SeasonInfo } from './components/SeasonInfo';
+
 import { getSeasonData, getShowData } from './api/data';
-import { Container, Main, BgrMask, Aside } from './resources/styles';
 
 class App extends Component {
   constructor() {
@@ -16,7 +17,8 @@ class App extends Component {
   async componentDidMount() {
     const args = {
       seriesId: 'tt5024912',
-      apikey: '6b9b4900',
+      // apikey: '6b9b4900',
+      apikey: '6df5320b',
       seasonInt: 1,
     }
 
@@ -39,7 +41,7 @@ class App extends Component {
     const EpisodesData = this.state.seriesData.Episodes;
 
     if(!this.state.showData) {
-      return <div />;
+      return <div>...Loading</div>;
     } else {
 
       let Plot = this.state.showData.Plot;

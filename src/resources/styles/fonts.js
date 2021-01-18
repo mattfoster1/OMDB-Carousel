@@ -7,22 +7,26 @@ import HelveticaNeueRoman from '../fonts/HelveticaNeueLTStd-Roman.otf';
 
 export default createGlobalStyle`
   @font-face {
-    font-family: 'Helvetica Neue LT Bold';
+    font-family: 'Helvetica Neue LT Std';
     src: url(${HelveticaNeueBd}) format('otf');
+    font-weight: 700;
   }
 
   @font-face {
-    font-family: 'Helvetica Neue LT';
+    font-family: 'Helvetica Neue LT Std';
     src: url(${HelveticaNeueLt}) format('otf');
+    font-weight: 400;
   }
 
   @font-face {
     font-family: 'Helvetica Neue LT Md';
     src: url(${HelveticaNeueMd}) format('otf');
+    font-weight: 700;
   }
 
   @font-face {
     font-family: 'Helvetica Neue LT Roman';
     src: url(${HelveticaNeueRoman}) format('otf');
+    font-weight: 700;
   }
 `;

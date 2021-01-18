@@ -1,6 +1,8 @@
 import { Component } from 'react';
 
-import { StyledSlider, StyledEpisodeCard, CarouselArrow } from '../resources/styles';
+import { StyledSlider, CarouselArrow } from '../resources/styles/styles';
+
+import { EpisodeCard } from './EpisodeCard';
 
 
 class Carousel extends Component {
@@ -24,8 +26,9 @@ class Carousel extends Component {
         <StyledSlider {...settings}>
           {EpisodesData.map((Episode) => { 
             return (
-                <StyledEpisodeCard 
-                  key={Episode.Episode} 
+                <EpisodeCard 
+                  key={Episode.Episode}
+                  EpisodeNumber={Episode.Episode}
                   Image={imagePath + `ep` + Episode.Episode + `.jpg`}
                   Title={Episode.Title} 
                   Para={"***hardcoded placeholder text***"}
