@@ -1,59 +1,38 @@
-// http://www.omdbapi.com/?i=tt3896198&apikey=6b9b4900
-import react from './node_modules/react';
+import { Component } from 'react';
 
-class Carousel extends react.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //       error: null,
-    //       isLoaded: false,
-    //       items: []
-    //     };
-    //   }
+import { EpisodeCard } from './EpisodeCard';
+import { StyledSlider, CarouselArrow } from '../resources/styles';
+
+
+class Carousel extends Component {
     
-    //   componentDidMount() {
-    //     fetch("http://www.omdbapi.com/?i=tt5024912&apikey=6b9b4900")
-    //       .then(res => res.json())
-    //       .then(
-    //         (result) => {
-    //           this.setState({
-    //             isLoaded: true,
-    //             items: result.items
-    //         });
-    //         console.log(result);
-    //         },
-    //         // Note: it's important to handle errors here
-    //         // instead of a catch() block so that we don't swallow
-    //         // exceptions from actual bugs in components.
-    //         (error) => {
-    //           this.setState({
-    //             isLoaded: true,
-    //             error
-    //           });
-    //         }
-    //       )
-    //   }
-    
-      render() {
-        const { error, isLoaded, items } = this.state;
-        console.log(this.state);
-        console.log(items);
-        if (error) {
-          return <div>Error: {error.message}</div>;
-        } else if (!isLoaded) {
-          return <div>Loading...</div>;
-        } else {
-          return (
-            <ul>
-              {/* {items.map(item => (
-                <li key={item.id}>
-                  {item.name} {item.price}
-                </li>
-              ))} */}
-            </ul>
-          );
-        }
-      }
+  render() {
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3.6,
+      slidesToScroll: 3,
+      prevArrow: <CarouselArrow arrowType={'previous'}/>,
+      nextArrow: <CarouselArrow arrowType={'next'}/>,
+    };
+    const { EpisodesData } = this.props;
+    console.log(EpisodesData);
+    return (
+      <div>
+        <StyledSlider {...settings}>
+          {EpisodesData.map((Episode) => {         
+            return (
+              <EpisodeCard 
+                key={Episode.Episode} 
+                Title={Episode.Title} 
+                Para={"***hardcoded placeholder text***"}
+              />) 
+          })}
+        </StyledSlider>
+      </div>
+    );
+  }
 }
 
 

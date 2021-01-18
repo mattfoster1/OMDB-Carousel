@@ -1,13 +1,11 @@
 import { Component } from 'react';
 
-import './App.css';
-// import { Carousel } from './components/Carousel';
 import { SeasonInfo } from './components/SeasonInfo';
+import { Carousel } from './components/Carousel';
 import { getSeasonData, getShowData } from './api/data';
-import { Container, Main, Aside } from './resources/styles';
+import { Container, Main, BgrMask, Aside } from './resources/styles';
 
 class App extends Component {
-
   constructor() {
     super();
     this.state = { seriesData: [] };
@@ -36,31 +34,34 @@ class App extends Component {
   render () {
     const seasonNumber = this.state.seriesData.Season;
     const seriesTitle = this.state.seriesData.Title;
-    let Plot;
+    const EpisodesData = this.state.seriesData.Episodes;
 
     if(!this.state.showData) {
-      Plot = false;
+      return <div />;
     } else {
-      Plot = this.state.showData.Plot;
+
+      let Plot = this.state.showData.Plot;
+
+      return (
+        <div className="App">
+          <Container>
+            <Main>
+              <SeasonInfo 
+                SeasonNumber={seasonNumber} 
+                SeriesTitle={seriesTitle}
+                Plot={Plot}
+              />
+              <Carousel EpisodesData={EpisodesData}/>
+              <BgrMask/>
+            </Main>
+            <Aside>
+              Here is the aside content
+            </Aside>
+          </Container>
+        </div>
+      );
     }
 
-    return (
-      <div className="App">
-        <Container>
-          <Main>
-            <SeasonInfo 
-              SeasonNumber={seasonNumber} 
-              SeriesTitle={seriesTitle}
-              Plot={Plot}
-            />
-            {/* <Carousel></Carousel> */}
-          </Main>
-          <Aside>
-            Here is the aside content
-          </Aside>
-        </Container>
-      </div>
-    );
   }
 }
 
