@@ -1,5 +1,4 @@
 import { Component } from 'react';
-// import image from '../resources/images/ep1.jpg';
 
 class EpisodeCard extends Component {
   render() {

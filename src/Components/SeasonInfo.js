@@ -1,17 +1,6 @@
 import { Component } from 'react';
-import styled from 'styled-components';
 
-const SeasonNumber = styled.p`
-    color: hotpink;
-`;
-
-const Title = styled.h1`
-  color: hotpink;
-`;
-
-const Synopsis = styled.p`
-    color: hotpink;
-`;
+import { SeasonNumber, Title, Synopsis } from '../resources/styles';
 
 class SeasonInfo extends Component {
     render() {

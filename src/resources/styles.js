@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { Arrow } from '../components/Arrow';
+import { EpisodeCard } from '../components/EpisodeCard';
 import poster from './images/poster.png';
 
 
@@ -74,8 +75,26 @@ const StyledSlider = styled(Slider)`
   max-width: 100%;
 `;
 
+const StyledEpisodeCard = styled(EpisodeCard)`
+  padding: 15px;
+  color: red;
+`;
+
+
 const CarouselArrow = styled(Arrow) `
     border: solid 1px hotpink;
 `;
 
-export {Container, Main, BgrMask, Aside, StyledSlider, CarouselArrow}
+const SeasonNumber = styled.p`
+    color: hotpink;
+`;
+
+const Title = styled.h1`
+  font-family: 'Helvetica Neue LT Bold';
+`;
+
+const Synopsis = styled.p`
+    color: hotpink;
+`;
+
+export {Container, Main, BgrMask, Aside, StyledSlider, StyledEpisodeCard, CarouselArrow, SeasonNumber, Title, Synopsis }
