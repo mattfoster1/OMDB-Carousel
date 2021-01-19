@@ -1,16 +1,9 @@
-import { Component } from 'react';
 
-class Arrow  extends Component {
-  render() {
-    const { className, onClick } = this.props;
+const Arrow = ({ className, onClick }) => (
+  <div
+    className={className}
+    onClick={onClick}
+  />
+)
 
-    return (
-        <div
-          className={className}
-          onClick={onClick}
-        />
-    );
-  }
-}
-
-export { Arrow }
+export default Arrow;

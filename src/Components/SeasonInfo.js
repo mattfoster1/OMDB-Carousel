@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -34,17 +33,14 @@ const Synopsis = styled.p`
   margin: 0;
 `;
 
-class SeasonInfo extends Component {
-  render() {
-    const { SeasonNo, SeriesTitle, Plot } = this.props;
-    return(
-      <SeasonInfoContent>
-        <SeasonNumber>Season {SeasonNo}</SeasonNumber>
-        <Title>{SeriesTitle}</Title>
-        <Synopsis>{Plot}</Synopsis>
-      </SeasonInfoContent>
-    )
-  }
+const SeasonInfo = ({ SeasonNo, SeriesTitle, Plot }) => {
+  return(
+    <SeasonInfoContent>
+      <SeasonNumber>Season {SeasonNo}</SeasonNumber>
+      <Title>{SeriesTitle}</Title>
+      <Synopsis>{Plot}</Synopsis>
+    </SeasonInfoContent>
+  )
 }
 
 SeasonInfo.propTypes = {
@@ -53,4 +49,4 @@ SeasonInfo.propTypes = {
   Plot: PropTypes.string.isRequired
 }
 
-export { SeasonInfo }
+export default SeasonInfo;

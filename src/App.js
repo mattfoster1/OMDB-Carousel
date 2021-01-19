@@ -2,9 +2,9 @@ import { Component } from 'react';
 
 import GlobalFonts from './resources/styles/fonts';
 import { Container, Main, BgrMask } from './resources/styles/styles';
-import { Carousel } from './components/Carousel';
-import { SeasonInfo } from './components/SeasonInfo';
-import { Aside } from './components/Aside';
+import Carousel from './components/Carousel';
+import SeasonInfo from './components/SeasonInfo';
+import Aside from './components/Aside';
 import { getSeasonData, getShowData, getEpisodeData } from './api/data';
 
 class App extends Component {
@@ -49,10 +49,16 @@ class App extends Component {
   }
   
   render () {
-    const seasonNumber = this.state.seriesData.Season;
-    const seriesTitle = this.state.seriesData.Title;
-    const EpisodesData = this.state.seriesData.Episodes;
-    const { activeEpisodeData, activeEpisode } = this.state;
+    const { 
+      activeEpisodeData, 
+      activeEpisode,
+      seriesData: {
+        Season : seasonNumber, 
+        Title : seriesTitle, 
+        Episodes : EpisodesData 
+      }
+    } = this.state;
+
     const imagePath = `${process.env.PUBLIC_URL}/images/`;
 
     if(!this.state.showData) {

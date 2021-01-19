@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -60,27 +59,24 @@ function getFormattedDate(dateAsText) {
   return year + "-" + month + "-" + date;
 }
 
-class Aside extends Component {
-  render() {
-    const { Image } = this.props
-    const { Title, Plot, Episode, Released, imdbRating } = this.props.ActiveEpisodeData;
-    const formattedDate = getFormattedDate(Released);
+const Aside = ({ ActiveEpisodeData, Image }) => {
+  const { Title, Plot, Episode, Released, imdbRating } = ActiveEpisodeData;
+  const formattedDate = getFormattedDate(Released);
 
-    return (
-      <AsideContent>
-        <AsideImage Image={Image}/>
-        <Stats>
-          <span>Episode {Episode} – {formattedDate}</span>
-          <span>{imdbRating}</span>
-        </Stats>
-        <Divider/>
-        <AsideEpisodeInfo>
-          <AsideTitle>{Title}</AsideTitle>
-          <p>{Plot}</p>
-        </AsideEpisodeInfo>
-      </AsideContent>
-    )
-  }
+  return (
+    <AsideContent>
+      <AsideImage Image={Image}/>
+      <Stats>
+        <span>Episode {Episode} – {formattedDate}</span>
+        <span>{imdbRating}</span>
+      </Stats>
+      <Divider/>
+      <AsideEpisodeInfo>
+        <AsideTitle>{Title}</AsideTitle>
+        <p>{Plot}</p>
+      </AsideEpisodeInfo>
+    </AsideContent>
+  )
 }
 
 Aside.propTypes = {
@@ -94,4 +90,4 @@ Aside.propTypes = {
   })
 }
   
-export { Aside }
+export default Aside;

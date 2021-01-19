@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import PropTypes from 'prop-types';
 
 import { breakpoints, minWidth, gutterWidthMain } from '../resources/styles/styles';
-import { Arrow } from '../components/Arrow';
+import Arrow from '../components/Arrow';
 import { EpisodeCard } from './EpisodeCard';
 import tailRight from '../resources/images/tail-right.png';
 
@@ -99,4 +99,4 @@ CarouselArrow.propTypes = {
 }
 
 
-export { Carousel }
+export default Carousel;
