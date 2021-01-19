@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const gutterWidth = `15px`;
 
@@ -49,6 +50,13 @@ class EpisodeCard extends Component {
       </EpisodeCardContent>
     )
   }
+}
+
+EpisodeCard.propTypes = {
+  Title: PropTypes.string.isRequired,
+  Para: PropTypes.string.isRequired,
+  Image: PropTypes.string.isRequired,
+  EpisodeNumber: PropTypes.string.isRequired
 }
 
 export { EpisodeCard }

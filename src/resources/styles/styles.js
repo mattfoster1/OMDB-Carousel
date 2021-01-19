@@ -27,7 +27,7 @@ const Container = styled.div`
   font-family: 'Helvetica Neue LT Std';
   font-weight: 400;
 
-  @media ${minWidth.sm} {
+  @media ${minWidth.md} {
       flex-direction: row;
   }
 `;
@@ -57,10 +57,10 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: flex-end;
 
-  @media ${minWidth.sm} {
+  @media ${minWidth.md} {
     padding-top: ${gutterWidthMain.top.desktop};
     padding-left: ${gutterWidthMain.left.desktop};
-    max-width: 66.66%;
+    max-width: 60%;
   }
 `;
 

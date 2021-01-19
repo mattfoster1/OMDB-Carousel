@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { minWidth, gutterWidthAside } from '../resources/styles/styles';
 
@@ -50,7 +51,6 @@ const AsideTitle = styled.h2`
   font-size: 27px;
 `;
 
-
 function getFormattedDate(dateAsText) {
   const trueDate = new Date(dateAsText);
   const date = ("0" + trueDate.getDate()).slice(-2);
@@ -59,9 +59,6 @@ function getFormattedDate(dateAsText) {
 
   return year + "-" + month + "-" + date;
 }
-
-
-
 
 class Aside extends Component {
   render() {
@@ -84,6 +81,17 @@ class Aside extends Component {
       </AsideContent>
     )
   }
+}
+
+Aside.propTypes = {
+  Image: PropTypes.string.isRequired,
+  ActiveEpisodeData: PropTypes.shape ({
+    Title: PropTypes.string.isRequired,
+    Plot: PropTypes.string.isRequired,
+    Episode: PropTypes.string.isRequired,
+    Released: PropTypes.string.isRequired,
+    imdbRating: PropTypes.string.isRequired,
+  })
 }
   
 export { Aside }

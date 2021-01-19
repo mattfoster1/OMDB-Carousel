@@ -1,16 +1,18 @@
 import { Component } from 'react';
 import styled from 'styled-components';
 import Slider from "react-slick";
+import PropTypes from 'prop-types';
 
 import { breakpoints, minWidth, gutterWidthMain } from '../resources/styles/styles';
 import { Arrow } from '../components/Arrow';
 import { EpisodeCard } from './EpisodeCard';
 import tailRight from '../resources/images/tail-right.png';
 
+
 const StyledSlider = styled(Slider)`
   margin-left: -${gutterWidthMain.left.mobile};
 
-  @media ${minWidth.sm} {
+  @media ${minWidth.md} {
     margin-left: 0;
   }
 `;
@@ -85,6 +87,15 @@ class Carousel extends Component {
       </div>
     );
   }
+}
+
+Carousel.propTypes = {
+  EpisodesData: PropTypes.array.isRequired,
+  cardClickHandler: PropTypes.func.isRequired,
+}
+
+CarouselArrow.propTypes = {
+  arrowType: PropTypes.string.isRequired,
 }
 
 
