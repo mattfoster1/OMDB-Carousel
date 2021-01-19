@@ -3,10 +3,8 @@ import styled from 'styled-components';
 import Slider from "react-slick";
 
 import { breakpoints, minWidth, gutterWidthMain } from '../resources/styles/styles';
-
 import { Arrow } from '../components/Arrow';
 import { EpisodeCard } from './EpisodeCard';
-
 import tailRight from '../resources/images/tail-right.png';
 
 const StyledSlider = styled(Slider)`
@@ -50,8 +48,8 @@ class Carousel extends Component {
       dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 3.6,
-      slidesToScroll: 3,
+      slidesToShow: 3,
+      slidesToScroll: 2,
       prevArrow: <CarouselArrow arrowType={'previous'}/>,
       nextArrow: <CarouselArrow arrowType={'next'}/>,
       responsive: [
