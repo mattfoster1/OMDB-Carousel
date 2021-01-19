@@ -26,7 +26,7 @@ const Stats = styled.div`
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
-  padding: 50px ${gutterWidth};
+  padding: 50px ${gutterWidthAside};
 `;
 
 const Divider = styled.div`
@@ -35,7 +35,7 @@ const Divider = styled.div`
 `;
 
 const AsideEpisodeInfo = styled.div`
-  padding: 45px ${gutterWidth};
+  padding: 45px ${gutterWidthAside};
   
   > p {
     font-size: 19px;
