@@ -13,8 +13,7 @@ const CarouselArrow = styled(Arrow) `
   top: auto;
   left: auto;
   bottom: 0;
-  right: ${props => props.arrowType === "previous" ? "36px" : "0"};
-  border: solid 1px ${props => props.arrowType === "previous" ? "red" : "blue"};
+  right: ${props => props.arrowType === "previous" ? "64px" : "15px"};
   transform: translate(0);
   transform: scaleX(${props => props.arrowType === "previous" ? "-1" : "1"});
   width: 32px;
@@ -50,7 +49,7 @@ class Carousel extends Component {
       ]
     };
     
-    const { EpisodesData } = this.props;
+    const { EpisodesData, cardClickHandler } = this.props;
     const imagePath = `${process.env.PUBLIC_URL}/images/`;
 
     return (
@@ -64,6 +63,7 @@ class Carousel extends Component {
                   Image={imagePath + `ep` + Episode.Episode + `.jpg`}
                   Title={Episode.Title} 
                   Para={"***hardcoded placeholder text***"}
+                  onClick={cardClickHandler}
                 />
             ) 
           })}
