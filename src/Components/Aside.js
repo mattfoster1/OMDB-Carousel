@@ -9,8 +9,8 @@ const AsideContent = styled.aside`
   justify-content: space-between;
   width: 100%;
 
-  @media ${minWidth.sm} {
-    max-width: 33.33%;
+  @media ${minWidth.md} {
+    max-width: 40%;
   }
 `;
 
@@ -26,7 +26,7 @@ const Stats = styled.div`
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
-  padding: 50px ${gutterWidthAside};
+  padding: 30px ${gutterWidthAside} 20px;
 `;
 
 const Divider = styled.div`
@@ -35,7 +35,7 @@ const Divider = styled.div`
 `;
 
 const AsideEpisodeInfo = styled.div`
-  padding: 45px ${gutterWidthAside};
+  padding: 20px ${gutterWidthAside} 60px;
   
   > p {
     font-size: 19px;
