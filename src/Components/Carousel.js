@@ -1,8 +1,31 @@
 import { Component } from 'react';
+import styled from 'styled-components';
 
-import { StyledSlider, CarouselArrow } from '../resources/styles/styles';
+import { StyledSlider, breakpoints } from '../resources/styles/styles';
 
+import { Arrow } from '../components/Arrow';
 import { EpisodeCard } from './EpisodeCard';
+
+import tailRight from '../resources/images/tail-right.png';
+
+const CarouselArrow = styled(Arrow) `
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: 0;
+  right: ${props => props.arrowType === "previous" ? "36px" : "0"};
+  border: solid 1px ${props => props.arrowType === "previous" ? "red" : "blue"};
+  transform: translate(0);
+  transform: scaleX(${props => props.arrowType === "previous" ? "-1" : "1"});
+  width: 32px;
+  height: 18px;
+  background: url(${tailRight}) center no-repeat;
+  z-index: 2;
+
+  :before {
+    content: "";
+  }
+`;
 
 
 class Carousel extends Component {
@@ -16,6 +39,15 @@ class Carousel extends Component {
       slidesToScroll: 3,
       prevArrow: <CarouselArrow arrowType={'previous'}/>,
       nextArrow: <CarouselArrow arrowType={'next'}/>,
+      responsive: [
+        {
+          breakpoint: breakpoints.sm,
+          settings: {
+            slidesToShow: 1.4,
+            slidesToScroll: 1,
+          }
+        },
+      ]
     };
     
     const { EpisodesData } = this.props;

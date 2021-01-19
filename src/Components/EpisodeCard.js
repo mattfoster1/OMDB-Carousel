@@ -29,6 +29,13 @@ const EpisodeCardNumber = styled.div`
   box-sizing: border-box;
 `;
 
+const EpisodeCardTitle = styled.div`
+  font-family: 'Helvetica Neue LT Std';
+  font-weight: 700;
+  padding: 18px 0 10px;
+`;
+
+
 class EpisodeCard extends Component {
   render() {
     const { Title, Para, Image, EpisodeNumber } = this.props;
@@ -37,7 +44,7 @@ class EpisodeCard extends Component {
       <EpisodeCardContent>
         <EpisodeCardNumber>{EpisodeNumber}</EpisodeCardNumber>
         <EpisodeImage src={Image} alt={Title}/>
-        <h3>{Title}</h3>
+        <EpisodeCardTitle>{Title}</EpisodeCardTitle>
         <p>{Para}</p>
       </EpisodeCardContent>
     )

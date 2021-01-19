@@ -1,9 +1,15 @@
 import { Component } from 'react';
 import styled from 'styled-components';
 
+import { minWidth } from '../resources/styles/styles';
+
 const SeasonInfoContent = styled.div`
   color: #fff;
-  margin-bottom: 120px;
+  margin-bottom: 48px;
+
+  @media ${minWidth.sm} {
+    margin-bottom: 120px;
+  }
 `;
 
 const SeasonNumber = styled.p`
@@ -14,8 +20,12 @@ const SeasonNumber = styled.p`
 const Title = styled.h1`
   font-family: 'Helvetica Neue LT Std';
   font-weight: 700;
-  font-size: 72px;
+  font-size: 48px;
   margin: 0;
+
+  @media ${minWidth.sm} {
+    font-size: 72px;
+  }
 `;
 
 const Synopsis = styled.p`

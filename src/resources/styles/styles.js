@@ -4,7 +4,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-import { Arrow } from '../../components/Arrow';
 import poster from '../images/poster.png';
 
 
@@ -37,21 +36,27 @@ const Container = styled.div`
 `;
 
 const gutterWidth = {
-    left: `96px`,
+    left: {
+      mobile: `36px`,
+      desktop: `96px`,
+    },
     bottom: `72px`
 };
 
 const Main = styled.main`
   background: url(${poster}) center no-repeat;
   background-size: cover;
-  padding-left: ${gutterWidth.left};
+  padding-left: ${gutterWidth.left.mobile};
   padding-bottom: ${gutterWidth.bottom};
-  width: 100%;
-  max-width: 66.66%;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
+  @media ${minWidth.sm} {
+    padding-left: ${gutterWidth.left.desktop};
+    max-width: 66.66%;
+  }
 `;
 
 const BgrMask = styled.div`
@@ -68,8 +73,4 @@ const StyledSlider = styled(Slider)`
   /* max-width: 100%; */
 `;
 
-const CarouselArrow = styled(Arrow) `
-  border: solid 1px hotpink;
-`;
-
-export {Container, Main, BgrMask, StyledSlider, CarouselArrow }
+export {Container, Main, BgrMask, StyledSlider, minWidth, breakpoints }
