@@ -1,12 +1,21 @@
 import { Component } from 'react';
 import styled from 'styled-components';
+import Slider from "react-slick";
 
-import { StyledSlider, breakpoints } from '../resources/styles/styles';
+import { breakpoints, minWidth, gutterWidthMain } from '../resources/styles/styles';
 
 import { Arrow } from '../components/Arrow';
 import { EpisodeCard } from './EpisodeCard';
 
 import tailRight from '../resources/images/tail-right.png';
+
+const StyledSlider = styled(Slider)`
+  margin-left: -${gutterWidthMain.left.mobile};
+
+  @media ${minWidth.sm} {
+    margin-left: 0;
+  }
+`;
 
 const CarouselArrow = styled(Arrow) `
   position: absolute;
@@ -20,9 +29,16 @@ const CarouselArrow = styled(Arrow) `
   height: 18px;
   background: url(${tailRight}) center no-repeat;
   z-index: 2;
+  transition: opacity 0.2s ease-in-out;
 
   :before {
     content: "";
+  }
+
+  /* override default package styles */
+  :hover {
+    background: url(${tailRight}) center no-repeat !important;
+    opacity: 0.5;
   }
 `;
 

@@ -69,8 +69,4 @@ const BgrMask = styled.div`
   background-color: #000;
 `;
 
-const StyledSlider = styled(Slider)`
-  /* max-width: 100%; */
-`;
-
-export {Container, Main, BgrMask, StyledSlider, minWidth, breakpoints }
+export {Container, Main, BgrMask, minWidth, breakpoints, gutterWidthMain, gutterWidthAside }
