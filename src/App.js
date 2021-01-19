@@ -66,7 +66,7 @@ class App extends Component {
           <Container>
             <Main>
               <SeasonInfo 
-                SeasonNumber={seasonNumber} 
+                SeasonNo={seasonNumber} 
                 SeriesTitle={seriesTitle}
                 Plot={Plot}
               />
