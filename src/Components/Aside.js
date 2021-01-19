@@ -1,10 +1,7 @@
 import { Component } from 'react';
 import styled from 'styled-components';
 
-import { minWidth } from '../resources/styles/styles';
-
-
-const gutterWidth = `38px`;
+import { minWidth, gutterWidthAside } from '../resources/styles/styles';
 
 const AsideContent = styled.aside`
   display: flex;
