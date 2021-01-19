@@ -13,7 +13,6 @@ const getSeasonData = async (args) => {
   }
 };
 
-// Needed only as season-specific call does not return show synopsis
 const getShowData = async (args) => {
   const { seriesId, apikey } = args;
 

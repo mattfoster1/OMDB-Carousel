@@ -71,7 +71,6 @@ class Aside extends Component {
     const { Image } = this.props
     const { Title, Plot, Episode, Released, imdbRating } = this.props.ActiveEpisodeData;
     const formattedDate = getFormattedDate(Released);
-    console.log(this.props);
 
     return (
       <AsideContent>
