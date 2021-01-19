@@ -57,7 +57,7 @@ function getFormattedDate(dateAsText) {
   const month = ("0" + (trueDate.getMonth() + 1)).slice(-2);
   const year = trueDate.getFullYear();
 
- return year + "-" + month + "-" + date;
+  return year + "-" + month + "-" + date;
 }
 
 
@@ -86,4 +86,4 @@ class Aside extends Component {
   }
 }
   
-  export { Aside }
+export { Aside }
