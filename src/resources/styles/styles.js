@@ -64,12 +64,6 @@ const BgrMask = styled.div`
   background-color: #000;
 `;
 
-const Aside = styled.aside`
-  background-color: palegoldenrod;
-  width: 100%;
-  max-width: 33.33%;
-`;
-
 const StyledSlider = styled(Slider)`
   /* max-width: 100%; */
 `;
@@ -78,4 +72,4 @@ const CarouselArrow = styled(Arrow) `
   border: solid 1px hotpink;
 `;
 
-export {Container, Main, BgrMask, Aside, StyledSlider, CarouselArrow }
+export {Container, Main, BgrMask, StyledSlider, CarouselArrow }

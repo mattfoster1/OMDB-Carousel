@@ -28,4 +28,19 @@ const getShowData = async (args) => {
   }
 };
 
-export { getSeasonData, getShowData };
+const getEpisodeData = async (args, episodeId) => {
+  const { apikey } = args;
+  const episodeStr = 'Episode=' + episodeId;
+
+  try {
+    let response = await fetch(
+      "http://www.omdbapi.com/?i=" + episodeId + '&' + episodeStr + "&apikey=" + apikey
+    )
+    let data = await response.json();
+    return data;
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+export { getSeasonData, getShowData, getEpisodeData };

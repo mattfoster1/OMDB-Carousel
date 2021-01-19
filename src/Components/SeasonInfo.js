@@ -23,8 +23,6 @@ const Synopsis = styled.p`
     margin: 0;
 `;
 
-
-
 class SeasonInfo extends Component {
     render() {
         const { seasonNumber, SeriesTitle, Plot } = this.props;
