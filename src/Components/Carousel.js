@@ -76,7 +76,7 @@ class Carousel extends Component {
                 <EpisodeCard 
                   key={Episode.Episode}
                   EpisodeNumber={Episode.Episode}
-                  Image={imagePath + `ep` + Episode.Episode + `.jpg`}
+                  Image={`${imagePath}ep${Episode.Episode}.jpg`}
                   Title={Episode.Title} 
                   Para={"***hardcoded placeholder text***"}
                   onClick={cardClickHandler}

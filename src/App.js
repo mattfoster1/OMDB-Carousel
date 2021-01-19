@@ -84,7 +84,7 @@ class App extends Component {
             </Main>
             <Aside 
               ActiveEpisodeData={activeEpisodeData}
-              Image={imagePath + `ep` + activeEpisode + `.jpg`}
+              Image={`${imagePath}ep${activeEpisode}.jpg`}
             />
           </Container>
         </div>
